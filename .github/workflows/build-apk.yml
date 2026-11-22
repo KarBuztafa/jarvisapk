@@ -19,8 +19,9 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    - name: Android SDK Kurulumu
-      uses: android-actions/setup-android@v3
+    - name: Android SDK Kurulumu ve Lisans Onayi
+      run: |
+        yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
 
     - name: Gradle Wrapper Olustur ve Yetki Ver
       run: |
